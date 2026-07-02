@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 221" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060813" />
+      <stop offset="100%" stop-color="#0b1124" />
+    </linearGradient>
+    
+    <!-- Logo Accent Gradient (Neon Green to Cyan) -->
+    <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#14FB7A" />
+      <stop offset="100%" stop-color="#00f2fe" />
+    </linearGradient>
+
+    <!-- Green Dot Gradient (No Glow, rich transition) -->
+    <linearGradient id="dot-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0ca84f" />
+      <stop offset="100%" stop-color="#14FB7A" />
+    </linearGradient>
+    
+    <!-- Fine-Tuned Text Glowing Effect Filter -->
+    <filter id="text-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feColorMatrix type="matrix" values="
+        0 0 0 0 0.078
+        0 0 0 0 0.984
+        0 0 0 0 0.478
+        0 0 0 0.35 0
+      " result="glow-color"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background: 600x221 — top=50px, bottom=50px, matching left/right separator margin of 50px -->
+  <rect width="600" height="221" rx="24" fill="url(#bg-grad)" stroke="#1e293b" stroke-width="2"/>
+
+  <!-- Branding Group: rect y=50 to y=114, center at y=82 -->
+  <g>
+    <circle cx="101" cy="82" r="14" fill="url(#dot-grad)" />
+    <rect x="129" y="50" width="16" height="64" rx="8" fill="#f8fafc" />
+    <text x="163" y="82"
+          font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+          font-size="88"
+          font-weight="900"
+          fill="url(#accent-grad)"
+          filter="url(#text-glow)"
+          dominant-baseline="central"
+          letter-spacing="1">TENTHS</text>
+  </g>
+
+  <!-- Separator: 27px below content bottom (114+27=141) — left/right margin = 50px matching top/bottom -->
+  <line x1="50" y1="141" x2="550" y2="141" stroke="#1e293b" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Tagline: 30px below separator (141+30=171) — bottom margin = 221-171 = 50px -->
+  <text x="300" y="171"
+        text-anchor="middle"
+        font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+        font-size="13"
+        font-weight="700"
+        letter-spacing="6"
+        fill="#64748b">HIGH-PERFORMANCE SIM TELEMETRY SUITE</text>
+</svg>
